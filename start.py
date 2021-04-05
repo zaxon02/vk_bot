@@ -18,7 +18,10 @@ for event in longpoll.listen():
         if event.to_me:
             if event.from_chat:
                 msg = event.text
-                print(msg)
                 chat_id = event.chat_id
-                send_message(chat_id, msg)
+                if '@1пдгр' in msg:
+                    send_message(chat_id, '@katezarubina')
+                elif '@2пдгр' in msg:
+                    send_message(chat_id, 'this msg for the second group')
+
                 #tag_add = event.tagAdd
